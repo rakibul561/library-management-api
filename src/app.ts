@@ -1,7 +1,8 @@
   
 import express, { Application, NextFunction, Request, Response } from 'express';
-import { bookRouters } from './app/controller/book.controller';
 import { globalErrorHandler } from './app/middleware/handleErrors';
+import { bookRouters } from './app/controller/book.controller';
+
 
 
  
