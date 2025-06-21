@@ -8,44 +8,62 @@ bookRouters.post(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const body = req.body;
-      const book = await Book.create(body);
+      const data = await Book.create(body);
 
       res.status(201).json({
         success: true,
         message: "book created succefully ",
-        book,
+        data,
       });
     } catch (error) {
       next(error);
     }
   }
-);
-bookRouters.get(
+);  
+
+
+
+  bookRouters.get(
   "/",
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const book = await Book.find();
-      res.status(201).json({
+      const bookAuthor = req.query.author;
+      const sortBy = req.query.sortBy as string || "createdAt"; 
+      const sortOrder = req.query.order === "asc" ? 1 : -1;    
+      const limit = parseInt(req.query.limit as string) || 10; 
+
+      const query: any = {};
+      if (bookAuthor) {
+        query.author = bookAuthor;
+      }
+
+      const data = await Book.find(query)
+        .sort({ [sortBy]: sortOrder }) 
+        .limit(limit);                
+
+      res.status(200).json({
         success: true,
-        message: "Book retrieved successfully",
-        book,
+        message: "Books retrieved successfully",
+        data,
       });
     } catch (error) {
       next(error);
     }
   }
 );
+
+
 
 bookRouters.get(
   "/:bookID",
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const bookID = req.params.bookID;
-      const book = await Book.findById(bookID);
+      const data = await Book.findById(bookID);
       res.status(201).json({
         success: true,
         message: "Book retrieved successfully ",
-        book,
+        data,
       });
     } catch (error) {
       next(error);
@@ -60,24 +78,24 @@ bookRouters.put(
     try {
       const bookID = req.params.bookID;
       const updatedBody = req.body;
-      const book = await Book.findByIdAndUpdate(bookID, updatedBody, {
+      const data = await Book.findByIdAndUpdate(bookID, updatedBody, {
         new: true,
       });
       res.status(201).json({
         success: true,
         message: "book updated  succefully ",
-        book,
+        data,
       });
     } catch (error) {
       next(error);
     }
   }
 ); 
-// routes/book.route.ts
+
 
 bookRouters.delete(
   "/:bookID",
-  async (req: Request, res: Response, next: NextFunction) => {
+  async (req, res, next) => {
     try {
       const bookID = req.params.bookID;
       const deletedBook = await Book.findByIdAndDelete(bookID);

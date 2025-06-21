@@ -2,6 +2,8 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
 import { globalErrorHandler } from './app/middleware/handleErrors';
 import { bookRouters } from './app/controller/book.controller';
+import { borrowRoutes } from './app/controller/borrow.controller';
+
 
 
 
@@ -10,6 +12,7 @@ import { bookRouters } from './app/controller/book.controller';
   app.use(express.json())
 
  app.use('/books', bookRouters)
+ app.use('/api/borrow', borrowRoutes)
   
    
 app.get('/', (req:Request, res:Response) =>{
