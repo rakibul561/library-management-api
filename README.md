@@ -11,9 +11,7 @@ A RESTful API built with **Express.js**, **Mongoose**, and **TypeScript** that a
 
 ---
 
-## 📽 Video Explanation
 
-📺 **Watch Video:** [YouTube / Drive Link](https://your-video-link.com)
 
 ---
 
@@ -99,7 +97,7 @@ src/
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/rakibul561/library-management-api
-cd B5A3
+
 ```
 
 ### 2️⃣ Install Dependencies
