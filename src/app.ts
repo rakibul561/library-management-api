@@ -11,7 +11,7 @@ import { borrowRoutes } from './app/controller/borrow.controller';
   const app:Application = express(); 
   app.use(express.json())
 
- app.use('/books', bookRouters)
+ app.use('/api/books', bookRouters)
  app.use('/api/borrow', borrowRoutes)
   
    

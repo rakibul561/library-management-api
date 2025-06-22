@@ -28,7 +28,7 @@ borrowRoutes.post("/", async (req, res, next) => {
     }
 
     if (book.copies < quantity) {
-      res.status(400).json({
+      res.status(400).json({ 
         sucess: false,
         message: "Not enough Copies avilable",
       });
@@ -43,7 +43,7 @@ borrowRoutes.post("/", async (req, res, next) => {
 
     // create a borrows books
 
-    const postBorrowData = await Borrow.create({
+    const postToBorrowData = await Borrow.create({
       book: bookId,
       quantity,
       dueDate,
@@ -52,7 +52,7 @@ borrowRoutes.post("/", async (req, res, next) => {
     res.status(201).json({
       sucess: true,
       message: "Book borrowed successfully",
-      data: postBorrowData,
+      data: postToBorrowData,
     });
   } catch (error) {
     res.status(400).json({
