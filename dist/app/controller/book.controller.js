@@ -89,7 +89,7 @@ exports.bookRouters.delete("/:bookID", (req, res, next) => __awaiter(void 0, voi
         const bookID = req.params.bookID;
         const deletedBook = yield book_models_1.Book.findByIdAndDelete(bookID);
         if (!deletedBook) {
-            return res.status(404).json({
+            res.status(404).json({
                 success: false,
                 message: "Book not found",
                 data: null,

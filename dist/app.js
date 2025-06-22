@@ -18,8 +18,8 @@ app.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
 app.get('/', (req, res) => {
     res.sendFile(path_1.default.join(__dirname, '../public/index.html'));
 });
-// app.get('/', (req:Request, res:Response) =>{
-//     res.send("Well Come mongoose  App")
-// })
+app.get('/', (req, res) => {
+    res.send("Well Come mongoose  App");
+});
 app.use(handleErrors_1.globalErrorHandler);
 exports.default = app;

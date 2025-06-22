@@ -7,7 +7,7 @@ A RESTful API built with **Express.js**, **Mongoose**, and **TypeScript** that a
 
 ## 🚀 Live Server
 
-🔗 **Live Link:** [https://your-deployment-link.com](https://your-deployment-link.com)
+🔗 **Live Link:** [https://library-management-api-opal.vercel.app/](https://library-management-api-opal.vercel.app/)
 
 ---
 

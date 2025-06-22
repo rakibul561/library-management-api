@@ -24,9 +24,9 @@ app.get('/', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
    
-// app.get('/', (req:Request, res:Response) =>{
-//     res.send("Well Come mongoose  App")
-// })
+app.get('/', (req:Request, res:Response) =>{
+    res.send("Well Come mongoose  App")
+})
  
 
 app.use(globalErrorHandler)
