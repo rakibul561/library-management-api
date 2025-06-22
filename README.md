@@ -38,8 +38,8 @@ src/
 │   ├── middleware/       // Error handling, validation
         
 │
-├── config/               // Database connection
-├── server.ts            // App entry point
+├──  server.ts       // Database connection
+├──  app.ts         // App entry point
 ```
 
 ---
@@ -98,7 +98,7 @@ src/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/B5A3.git
+git clone https://github.com/rakibul561/library-management-api
 cd B5A3
 ```
 
@@ -110,7 +110,7 @@ npm install
 ### 3️⃣ Setup Environment
 Create a `.env` file in the root:
 ```
-PORT=5000
+PORT=3000
 DATABASE_URL=your_mongodb_uri
 ```
 
