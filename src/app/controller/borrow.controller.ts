@@ -65,7 +65,7 @@ borrowRoutes.post("/", async (req, res, next) => {
 borrowRoutes.get("/", async (req, res,next) => {
   try {
     const summary = await Borrow.aggregate([
-      // process1
+
 
       {
         $group: {
@@ -76,7 +76,7 @@ borrowRoutes.get("/", async (req, res,next) => {
         },
       },
 
-      // process 2
+
 
       {
         $lookup: {
@@ -88,7 +88,6 @@ borrowRoutes.get("/", async (req, res,next) => {
       },
       { $unwind: '$book' },
 
-    //   process 3
 
     {
         $project: {

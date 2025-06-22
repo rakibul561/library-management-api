@@ -24,7 +24,9 @@ dueDate:{
     versionKey:false,
     timestamps:true,
    
-});
+}); 
+
+
 
 
 export const Borrow = mongoose.model<IBorrow>("Borrow", borrowSchema); 
