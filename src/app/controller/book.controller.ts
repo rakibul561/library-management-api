@@ -4,7 +4,7 @@ import { Book } from "../models/book.models";
 export const bookRouters = express.Router();
 
 bookRouters.post(
-  "/create-book",
+  "/",
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const body = req.body;

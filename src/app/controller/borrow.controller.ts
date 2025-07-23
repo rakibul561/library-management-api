@@ -18,9 +18,7 @@ borrowRoutes.post("/", async (req, res, next) => {
   try {
     const {
       book: bookId,
-      quantity,
-      dueDate,
-    } = await borrowZodSchema.parseAsync(req.body);
+      quantity, dueDate, } = await borrowZodSchema.parseAsync(req.body);
     const book = await Book.findById(bookId);
 
     if (!book) {
